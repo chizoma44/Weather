@@ -1,0 +1,49 @@
+body {
+  background-color: black;
+  background-image: url("https://toppng.com/uploads/preview/moon-full-moon-red-moon-sky-night-stars-dark-11570263303tbypwdiftw.jpg");
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+h1 {
+  color: white;
+  text-align: left;
+}
+h2 {
+  text-align: left;
+  color: white;
+}
+
+h4 {
+  text-align: center;
+  color: white;
+  font-family: cursive;
+}
+h5 {
+  padding-top: 300px;
+}
+.location {
+  font-size: 35px;
+}
+.pic {
+  font-size: 50px;
+}
+.temp {
+  font-size: 50px;
+}
+.units {
+  float: left;
+  font-size: 20px;
+}
+
+.col {
+  color: white;
+  text-align: center;
+  border-radius: 15px;
+  padding-bottom: 20px;
+}
