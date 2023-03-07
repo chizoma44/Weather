@@ -27,6 +27,11 @@ h4 {
 h5 {
   padding-top: 300px;
 }
+.btn {
+  display: block;
+  margin: 0 auto;
+  right: -60px;
+}
 .location {
   font-size: 35px;
 }
@@ -39,6 +44,9 @@ h5 {
 .units {
   float: left;
   font-size: 20px;
+}
+.extra-effects {
+  margin: 0 0 10px;
 }
 
 .col {

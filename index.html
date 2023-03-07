@@ -26,18 +26,43 @@
       <div class="container text-center">
         <div class="position-relative">
           <h4>Weather</h4>
+          <div class="container text-center">
+            <div class="row row-cols-auto extra-effects">
+              <div id="precipitation" class="col">Precipitation</div>
+              <div id="humidity" class="col">Humidity</div>
+              <div id="wind" class="col">Wind</div>
+            </div>
+          </div>
           <br />
           <br />
-          <form id="search-form">
-            <input
-              type="text"
-              id="search-city"
-              placeholder="Enter a city"
-              required
-              autofocus="on"
-              autocomplete="off"
-            />
-            <input type="submit" value="Search" />
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-3">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+              </div>
+              <div class="col-1">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-primary shadow-sm w-100"
+                />
+              </div>
+              <div class="col-2">
+                <button
+                  class="btn btn-success w-100"
+                  id="current-location-button"
+                >
+                  Locate Here
+                </button>
+              </div>
+            </div>
           </form>
           <br />
           <h2>
