@@ -54,7 +54,7 @@ function showTemp(response) {
   fahrenheit.innerHTML = `${fahren}°F`;
 }
 
-function search(city) {
+function search(place) {
   let units = "metric";
   let urlEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 
