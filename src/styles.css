@@ -27,6 +27,7 @@ h4 {
 h5 {
   padding-top: 300px;
 }
+
 .btn {
   display: block;
   margin: 0 auto;
@@ -45,10 +46,11 @@ h5 {
   float: left;
   font-size: 20px;
 }
-.extra-effects {
-  margin: 0 0 10px;
+li {
+  color: red;
+  list-style: none;
+  text-align: right;
 }
-
 .col {
   color: white;
   text-align: center;

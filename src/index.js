@@ -50,12 +50,11 @@ function showTemp(response) {
 
 function search(event) {
   event.preventDefault();
-
-  let place = document.querySelector("#search-city").value;
+  let place = document.querySelector("#city-input").value;
   let units = "metric";
-  let urlEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
+  let urlEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 
-  let apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
+  let apiKey = `d1a86552de255334f6117b348c4519bd`;
   let apiUrl = `${urlEndpoint}q=${place}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemp);
