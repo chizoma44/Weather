@@ -26,11 +26,11 @@
       <div class="container text-center">
         <div class="position-relative">
           <h4>Weather</h4>
-
+          <br />
           <br />
           <form class="search-form" id="search-form">
             <div class="row">
-              <div class="col-3">
+              <div class="col-4">
                 <input
                   type="search"
                   placeholder="Type a city.."
@@ -40,15 +40,15 @@
                   class="form-control shadow-sm"
                 />
               </div>
-              <div class="col-1">
+              <div class="col-2">
                 <input
                   type="submit"
                   value="Search"
-                  class="form-control btn btn-primary shadow-sm"
+                  class="form-control btn btn-primary shadow-sm w-100"
                 />
               </div>
               <div class="col-2">
-                <button class="btn btn-success" id="current-location-button">
+                <button class="btn btn-success w-100" id="locate-here-button">
                   Locate Here
                 </button>
               </div>
@@ -58,7 +58,7 @@
           <h2>
             <div id="city" class="location"></div>
             <div id="time-now"></div>
-            <div id="description">Cloudy</div>
+            <div id="description"></div>
           </h2>
 
           <h1>
@@ -69,9 +69,9 @@
             >
           </h1>
           <ul>
-            <li>Humidity: <span id="humidity"></span>%</li>
+            <li>Humidity: <span id="humidity"></span> %</li>
 
-            <li>Wind:<span id="wind"></span>km/h</li>
+            <li>Wind: <span id="wind"></span> km/h</li>
           </ul>
 
           <div class="container text-center">

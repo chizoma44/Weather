@@ -29,7 +29,6 @@ if (minutes < 10) {
 timeNow.innerHTML = `${day} ${hours}:${minutes}`;
 
 //Challenge 2
-
 function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let placeCity = response.data.name;
@@ -40,6 +39,13 @@ function showTemp(response) {
   let tempo = document.querySelector("#tempo");
   tempo.innerHTML = `${temperature}℃`;
 
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
+
   let celsius = document.querySelector("#celsius");
   celsius.innerHTML = `${temperature}℃`;
 
@@ -48,9 +54,7 @@ function showTemp(response) {
   fahrenheit.innerHTML = `${fahren}°F`;
 }
 
-function search(event) {
-  event.preventDefault();
-  let place = document.querySelector("#city-input").value;
+function search(place) {
   let units = "metric";
   let urlEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 
@@ -59,12 +63,36 @@ function search(event) {
 
   axios.get(apiUrl).then(showTemp);
 }
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
 
-function showCity() {
-  let show = document.querySelector("#city");
-  show.innerHTML = "No Selection made";
+function handlesearch(event) {
+  event.preventDefault();
+  let place = document.querySelector("#city-input").value;
+  search(place);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handlesearch);
+
+function findPosition(position) {
+  console.log(response.coords.longitude);
+
+  let longitude = response.coords.longitude;
+  let latitude = response.coords.latitude;
+
+  let units = "metric";
+  let urlEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
+
+  let apiKey = `d1a86552de255334f6117b348c4519bd`;
+  let apiUrl = `lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(showTemp);
 }
 
-showCity();
+function findLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(findPosition);
+}
+
+let locateHereButton = document.querySelector("#locate-here-button");
+locateHereButton.addEventListener("click", findLocation);
+
+search("Tokyo");
