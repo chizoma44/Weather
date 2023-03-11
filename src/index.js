@@ -73,16 +73,14 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handlesearch);
 
 function findPosition(position) {
-  console.log(response.coords.longitude);
-
-  let longitude = response.coords.longitude;
-  let latitude = response.coords.latitude;
+  let longitude = response.coord.longitude;
+  let latitude = response.coord.latitude;
 
   let units = "metric";
   let urlEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 
   let apiKey = `d1a86552de255334f6117b348c4519bd`;
-  let apiUrl = `lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `lat=${position.coord.latitude}&lon=${position.coord.longitude}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemp);
 }
