@@ -73,6 +73,7 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handlesearch);
 
 function findPosition(position) {
+  console.log(response);
   let longitude = response.coord.longitude;
   let latitude = response.coord.latitude;
 
