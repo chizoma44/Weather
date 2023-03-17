@@ -3,7 +3,6 @@
 let currentTime = new Date();
 let hours = currentTime.getHours();
 let minutes = currentTime.getMinutes();
-console.log(new Date());
 
 let days = [
   "Sunday",
@@ -73,15 +72,14 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handlesearch);
 
 function findPosition(position) {
-  console.log(response);
-  let longitude = response.coord.longitude;
-  let latitude = response.coord.latitude;
+  let longitude = position.coords.longitude;
+  let latitude = position.coords.latitude;
 
-  let units = "metric";
+  let units = `metric`;
   let urlEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 
   let apiKey = `d1a86552de255334f6117b348c4519bd`;
-  let apiUrl = `lat=${position.coord.latitude}&lon=${position.coord.longitude}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `${urlEndpoint}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemp);
 }
