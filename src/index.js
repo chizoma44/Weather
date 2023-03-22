@@ -29,6 +29,7 @@ timeNow.innerHTML = `${day} ${hours}:${minutes}`;
 
 //Challenge 2
 function showTemp(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let placeCity = response.data.name;
 
